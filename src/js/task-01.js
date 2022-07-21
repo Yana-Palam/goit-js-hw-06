@@ -6,13 +6,11 @@ const getQuantityCategories = () => {
 getQuantityCategories();
 
 const getCategory = categories => {
-  [...categories].map(category => {
-    const titlesEl = category.querySelectorAll('h2');
+  for (const category of categories) {
+    const titleEl = category.querySelector('h2');
     const itemsOfCategory = category.querySelectorAll('li');
-    [...titlesEl].map(title => {
-      console.log(`Category: ${title.textContent}`);
-    });
-    console.log(`Elements: ${[...itemsOfCategory].length}`);
-  });
+    console.log(`Category: ${titleEl.textContent}`);
+    console.log(`Elements: ${itemsOfCategory.length}`);
+  }
 };
 getCategory(itemsCategoriesEl);

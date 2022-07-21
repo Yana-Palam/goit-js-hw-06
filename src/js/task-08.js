@@ -5,18 +5,17 @@ refs.inputForm.addEventListener('submit', onInputFormSubmit);
 function onInputFormSubmit(event) {
   event.preventDefault();
 
-  if (
-    event.currentTarget.elements.email.value === '' ||
-    event.currentTarget.elements.password.value === ''
-  ) {
+  const { email, password } = event.currentTarget.elements;
+
+  if (email.value.trim() === '' || password.value.trim() === '') {
     alert('Error! Всі поля повинні бути заповнені');
   } else {
     // const formData = new FormData(event.currentTarget);
-    const mail = event.currentTarget.elements.email.value;
-    const password = event.currentTarget.elements.password.value;
+    const userEmail = email.value.trim();
+    const userPassword = password.value.trim();
     const user = {
-      mail,
-      password,
+      userEmail,
+      userPassword,
     };
     console.log(user);
     event.currentTarget.reset();

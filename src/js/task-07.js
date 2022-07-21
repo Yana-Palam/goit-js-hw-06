@@ -6,7 +6,5 @@ const refs = {
 refs.inputRange.addEventListener('input', onInputRange);
 
 function onInputRange(event) {
-  refs.outputText.style.fontSize = event.currentTarget.value
-    .toString()
-    .concat('px');
+  refs.outputText.style.fontSize = event.currentTarget.value + 'px';
 }
