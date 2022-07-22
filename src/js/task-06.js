@@ -7,10 +7,13 @@ function onInputTextBlur(event) {
   const valueLength = Number(event.currentTarget.getAttribute('data-length'));
 
   if (event.currentTarget.value.length === valueLength) {
-    event.currentTarget.classList.remove('invalid');
-    event.currentTarget.classList.add('valid');
+    addAndRemoveClass('invalid', 'valid');
   } else {
-    event.currentTarget.classList.remove('valid');
-    event.currentTarget.classList.add('invalid');
+    addAndRemoveClass('valid', 'invalid');
   }
+}
+
+function addAndRemoveClass(classToRemove, classToAdd) {
+  event.currentTarget.classList.remove(classToRemove);
+  event.currentTarget.classList.add(classToAdd);
 }
