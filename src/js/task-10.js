@@ -44,9 +44,6 @@ function onButtonCreateClick() {
 }
 
 function onButtonDestroyClick() {
-  const newBoxes = document.querySelectorAll('.newBox');
-  if (newBoxes.length > 0) {
-    [...newBoxes].map(item => item.remove());
-    startWidth = 30;
-  }
+  refs.boxesEl.innerHTML = '';
+  startWidth = 30;
 }
